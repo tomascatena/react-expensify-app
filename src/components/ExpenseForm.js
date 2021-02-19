@@ -3,7 +3,7 @@ import moment from 'moment';
 
 // Airbnb react-dates
 import 'react-dates/initialize';
-import { SignleDatePicker, SingleDatePicker } from 'react-dates';
+import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 
 export class ExpenseForm extends Component {
@@ -53,7 +53,7 @@ export class ExpenseForm extends Component {
       this.setState(() => ({ error: 'Please provide description and amount' }));
     } else {
       this.setState(() => ({ error: '' }));
-      this.props.onSubmit({
+      return this.props.onSubmit({
         description: this.state.description,
         amount: parseFloat(this.state.amount, 10) * 100,
         createdAt: this.state.createdAt.valueOf(),

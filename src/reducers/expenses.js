@@ -7,7 +7,7 @@ export default (state = expesnesReducerDefaultState, action) => {
     case 'ADD_EXPENSE':
       return [...state, action.expense];
     case 'REMOVE_EXPENSE':
-      const newState = state.filter((e) => e.id !== action.expense.id);
+      const newState = state.filter((e) => e.id !== action.id);
       return [...newState];
     case 'EDIT_EXPENSE':
       return state.map((expense) => {
